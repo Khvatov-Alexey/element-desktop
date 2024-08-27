@@ -1,14 +1,14 @@
 {
-    "name": "element-desktop",
-    "productName": "Element",
+    "name": "red-v-desktop",
+    "productName": "RED-V",
     "main": "lib/electron-main.js",
-    "version": "1.11.75",
-    "description": "A feature-rich client for Matrix.org",
-    "author": "Element",
-    "homepage": "https://element.io",
+    "version": "1.0.0",
+    "description": "Многофункциональный клиент РЕД V",
+    "author": "РЕД СОФТ",
+    "homepage": "https://www.red-soft.ru",
     "repository": {
         "type": "git",
-        "url": "https://github.com/vector-im/element-desktop"
+        "url": "https://github.com/Khvatov-Alexey/element-desktop"
     },
     "license": "Apache-2.0",
     "files": [],

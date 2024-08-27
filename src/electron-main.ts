@@ -178,10 +178,10 @@ async function loadConfig(): Promise<void> {
         if (e instanceof SyntaxError) {
             void dialog.showMessageBox({
                 type: "error",
-                title: `Your ${global.vectorConfig.brand || "Element"} is misconfigured`,
+                title: `Your ${global.vectorConfig.brand || "RED-V"} is misconfigured`,
                 message:
-                    `Your custom ${global.vectorConfig.brand || "Element"} configuration contains invalid JSON. ` +
-                    `Please correct the problem and reopen ${global.vectorConfig.brand || "Element"}.`,
+                    `Your custom ${global.vectorConfig.brand || "RED-V"} configuration contains invalid JSON. ` +
+                    `Please correct the problem and reopen ${global.vectorConfig.brand || "RED-V"}.`,
                 detail: e.message || "",
             });
         }
@@ -223,12 +223,12 @@ async function setupGlobals(): Promise<void> {
     const iconFile = `element.${process.platform === "win32" ? "ico" : "png"}`;
     global.trayConfig = {
         icon_path: path.join(resPath, "img", iconFile),
-        brand: global.vectorConfig.brand || "Element",
+        brand: global.vectorConfig.brand || "RED-V",
     };
 
     // launcher
     global.launcher = new AutoLaunch({
-        name: global.vectorConfig.brand || "Element",
+        name: global.vectorConfig.brand || "RED-V",
         isHidden: true,
         mac: {
             useLaunchAgent: true,
@@ -237,9 +237,9 @@ async function setupGlobals(): Promise<void> {
 }
 
 // Look for an auto-launcher under 'Riot' and if we find one,
-// port its enabled/disabled-ness over to the new 'Element' launcher
+// port its enabled/disabled-ness over to the new 'RED-V' launcher
 async function moveAutoLauncher(): Promise<void> {
-    if (!global.vectorConfig.brand || global.vectorConfig.brand === "Element") {
+    if (!global.vectorConfig.brand || global.vectorConfig.brand === "RED-V") {
         const oldLauncher = new AutoLaunch({
             name: "Riot",
             isHidden: true,
@@ -278,7 +278,7 @@ const warnBeforeExit = (event: Event, input: Input): void => {
                 buttons: [
                     _t("action|cancel"),
                     _t("action|close_brand", {
-                        brand: global.vectorConfig.brand || "Element",
+                        brand: global.vectorConfig.brand || "RED-V",
                     }),
                 ],
                 message: _t("confirm_quit"),
@@ -628,4 +628,4 @@ app.on("second-instance", (ev, commandLine, workingDirectory) => {
 // installer uses for the shortcut icon.
 // This makes notifications work on windows 8.1 (and is
 // a noop on other platforms).
-app.setAppUserModelId("com.squirrel.element-desktop.Element");
+app.setAppUserModelId("com.squirrel.red-v-desktop.Red-v");

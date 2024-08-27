@@ -21,8 +21,8 @@ import { flipFuses, FuseVersion, FuseV1Options } from "@electron/fuses";
  *  Passes $ED_DEBIAN_CHANGELOG to build.deb.fpm if specified
  */
 
-const NIGHTLY_APP_ID = "im.riot.nightly";
-const NIGHTLY_DEB_NAME = "element-nightly";
+const NIGHTLY_APP_ID = "red.v.nightly";
+const NIGHTLY_DEB_NAME = "red-v-nightly";
 
 interface Pkg {
     name: string;
@@ -52,7 +52,7 @@ interface Configuration extends BaseConfiguration {
  * @see https://www.electron.build/configuration/configuration
  */
 const config: Writable<Configuration> = {
-    appId: "im.riot.app",
+    appId: "red.v.app",
     asarUnpack: "**/*.node",
     afterPack: async (context: AfterPackContext) => {
         if (context.electronPlatformName !== "darwin" || context.arch === Arch.universal) {
@@ -161,8 +161,8 @@ const config: Writable<Configuration> = {
     },
     protocols: [
         {
-            name: "element",
-            schemes: ["io.element.desktop", "element"],
+            name: "red-v",
+            schemes: ["io.red.v.desktop", "red-v"],
         },
     ],
 };
