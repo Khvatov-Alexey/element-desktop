@@ -161,8 +161,8 @@ const config: Writable<Configuration> = {
     },
     protocols: [
         {
-            name: "red-v",
-            schemes: ["io.red.v.desktop", "red-v"],
+            name: "red v",
+            schemes: ["io.red.v.desktop", "red v"],
         },
     ],
 };

@@ -19,7 +19,7 @@ import { URL } from "url";
 import path from "path";
 import fs from "fs";
 
-const LEGACY_PROTOCOL = "red-v";
+const LEGACY_PROTOCOL = "red v";
 const PROTOCOL = "io.red.v.desktop";
 const SEARCH_PARAM = "red-v-desktop-ssoid";
 const STORE_FILE_NAME = "sso-sessions.json";
