@@ -19,8 +19,9 @@
         "https://scalar-staging.vector.im/api",
         "https://scalar-staging.riot.im/scalar/api"
     ],
-    "bug_report_endpoint_url": "https://element.io/bugreports/submit",
     "uisi_autorageshake_app": "element-auto-uisi",
+    "existing_issues_url": "https://github.com/Khvatov-Alexey/element-desktop/issues",
+    "new_issue_url": "https://github.com/Khvatov-Alexey/element-desktop/issues/new/choose",
     "room_directory": {
         "servers": ["http://matrix.redmat.localdomain", "matrix.redmat.localdomain", "matrix.org", "gitter.im"]
     },
