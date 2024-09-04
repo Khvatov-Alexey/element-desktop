@@ -43,6 +43,7 @@
     "map_style_url": "https://api.maptiler.com/maps/streets/style.json?key=fU3vlMsMn4Jb6dnEIFsx",
     "setting_defaults": {
         "RustCrypto.staged_rollout_percent": 60,
-        "UIFeature.widgets": false
+        "UIFeature.widgets": false,
+        "language" : "ru"
     }
 }
