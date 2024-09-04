@@ -22,7 +22,7 @@
         "about": "О программе",
         "brand_help": "Помощь %(brand)s",
         "help": "Помощь",
-        "preferences": "Предпочтения"
+        "preferences": "Настройки"
     },
     "confirm_quit": "Вы уверены, что хотите выйти?",
     "edit_menu": {
@@ -56,7 +56,7 @@
         "view": "Просмотр"
     },
     "window_menu": {
-        "bring_all_to_front": "Вынести всё вперёд",
+        "bring_all_to_front": "Вынести всё на передний план",
         "label": "Окно",
         "zoom": "Масштаб"
     }
