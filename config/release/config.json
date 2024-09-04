@@ -15,6 +15,7 @@
     "uisi_autorageshake_app": "element-auto-uisi",
     "existing_issues_url": "https://github.com/Khvatov-Alexey/element-desktop/issues",
     "new_issue_url": "https://github.com/Khvatov-Alexey/element-desktop/issues/new/choose",
+    "permalink_prefix": "http://matrix.redmat.localdomain",
     "room_directory": {
         "servers": ["http://matrix.redmat.localdomain", "matrix.redmat.localdomain", "matrix.org", "gitter.im"]
     },
