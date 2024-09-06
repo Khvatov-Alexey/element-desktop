@@ -1,6 +1,6 @@
 {
     "name": "red-v-desktop",
-    "productName": "RED V",
+    "productName": "РЕД V",
     "main": "lib/electron-main.js",
     "version": "1.0.2",
     "description": "Многофункциональный клиент РЕД V",
