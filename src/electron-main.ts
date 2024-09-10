@@ -304,6 +304,7 @@ process.on("uncaughtException", function (error: Error): void {
     console.log("Unhandled exception", error);
 });
 
+app.commandLine.appendSwitch('--ignore-certificate-errors');
 app.commandLine.appendSwitch("--enable-usermedia-screen-capturing");
 if (!app.commandLine.hasSwitch("enable-features")) {
     app.commandLine.appendSwitch("enable-features", "WebRTCPipeWireCapturer");
