@@ -156,6 +156,9 @@ const config: Writable<Configuration> = {
     msi: {
         perMachine: true,
     },
+    squirrelWindows: {
+        iconUrl: "https://github.com/Khvatov-Alexey/element-desktop/blob/189751_current/build/icon.ico?raw=true",
+    },
     directories: {
         output: "dist",
     },
