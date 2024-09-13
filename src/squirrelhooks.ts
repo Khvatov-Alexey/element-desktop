@@ -15,7 +15,7 @@ limitations under the License.
 */
 
 import path from "path";
-import { spawn } from "child_process";
+import { spawn, exec } from "child_process";
 import { app } from "electron";
 
 export function getSquirrelExecutable(): string {
@@ -36,12 +36,41 @@ function runUpdateExe(args: string[]): Promise<void> {
     });
 }
 
+function existsRedsoftDnsNs(nrptRulesStr: string) : boolean {
+    return nrptRulesStr.split('\n')
+        .filter(str => str.startsWith("Namespace " || str.startsWith("Namespace:")))
+        .map(str => str.split(':').map(s => s.trim()))
+        .filter(params => params.length > 1)
+        .map(params => params[1])
+        .includes("{redsoft.localdomain, .redsoft.localdomain, redsoft.org, .redsoft.org}");
+}
+
+function addWin32NrptRules(): void {
+    const proc = exec('powershell -command "Get-DnsClientNrptRule"');
+
+    const chunks: Uint8Array[] | Buffer[] = [];
+    proc.stdout?.on('data', (chunk) => chunks.push(Buffer.from(chunk)));
+
+    proc.on("close", () => {
+        const nrptRulesStr = Buffer.concat(chunks).toString("utf-8");
+        if (!existsRedsoftDnsNs(nrptRulesStr)) {
+            console.log("Redsoft namespace of NRPT rule not found. Will be inserted");
+            exec('powershell -command "Add-DnsClientNrptRule -NameServers "10.2.0.2" ' +
+                '-Namespace "redsoft.localdomain", ".redsoft.localdomain", "redsoft.org", ".redsoft.org""');
+        }
+    });
+}
+
 function checkSquirrelHooks(): boolean {
     if (process.platform !== "win32") return false;
     const cmd = process.argv[1];
     const target = path.basename(process.execPath);
 
     switch (cmd) {
+        case "--squirrel-firstrun":
+            addWin32NrptRules();
+            return false;
+
         case "--squirrel-install":
             void runUpdateExe(["--createShortcut=" + target]).then(() => app.quit());
             return true;
