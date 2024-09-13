@@ -2,7 +2,7 @@
     "name": "red-v-desktop",
     "productName": "РЕД V",
     "main": "lib/electron-main.js",
-    "version": "1.0.5",
+    "version": "1.0.6",
     "description": "Многофункциональный клиент РЕД V",
     "author": "РЕД СОФТ",
     "homepage": "https://www.red-soft.ru",
